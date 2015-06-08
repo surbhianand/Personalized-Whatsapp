@@ -1,0 +1,130 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (javaClasses.cpp:124), pid=8960, tid=5916
+#  fatal error: Invalid layout of preloaded class
+#
+# JRE version:  (8.0_05-b13) (build )
+# Java VM: Java HotSpot(TM) Client VM (25.5-b02 mixed mode windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0026c400):  JavaThread "Unknown thread" [_thread_in_vm, id=5916, stack(0x01310000,0x01360000)]
+
+Stack: [0x01310000,0x01360000],  sp=0x0135f620,  free space=317k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x1921e8]
+V  [jvm.dll+0x18b2e6]
+V  [jvm.dll+0x3aafa]
+V  [jvm.dll+0x3acb0]
+V  [jvm.dll+0x499f3]
+V  [jvm.dll+0x9c1ae]
+V  [jvm.dll+0x9c472]
+V  [jvm.dll+0x140ae1]
+V  [jvm.dll+0x1647e8]
+V  [jvm.dll+0xd8c61]
+C  [javaw.exe+0x13ce]
+C  [javaw.exe+0x1e85]
+C  [javaw.exe+0xab71]
+C  [javaw.exe+0xabfb]
+C  [kernel32.dll+0x53c45]
+C  [ntdll.dll+0x637f5]
+C  [ntdll.dll+0x637c8]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0026c400 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=5916, stack(0x01310000,0x01360000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.015 loading class java/lang/CharSequence done
+Event: 0.015 loading class java/lang/String done
+Event: 0.015 loading class java/lang/Class
+Event: 0.015 loading class java/lang/reflect/AnnotatedElement
+Event: 0.016 loading class java/lang/reflect/AnnotatedElement done
+Event: 0.016 loading class java/lang/reflect/GenericDeclaration
+Event: 0.016 loading class java/lang/reflect/GenericDeclaration done
+Event: 0.016 loading class java/lang/reflect/Type
+Event: 0.016 loading class java/lang/reflect/Type done
+Event: 0.016 loading class java/lang/Class done
+
+
+Dynamic libraries:
+0x003f0000 - 0x00420000 	C:\Program Files\Java\jre8\bin\javaw.exe
+0x77d50000 - 0x77e8c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x768a0000 - 0x76974000 	C:\Windows\system32\kernel32.dll
+0x752c0000 - 0x7530a000 	C:\Windows\system32\KERNELBASE.dll
+0x76e40000 - 0x76ee0000 	C:\Windows\system32\ADVAPI32.dll
+0x76770000 - 0x7681c000 	C:\Windows\system32\msvcrt.dll
+0x76820000 - 0x76839000 	C:\Windows\SYSTEM32\sechost.dll
+0x75650000 - 0x756f1000 	C:\Windows\system32\RPCRT4.dll
+0x766a0000 - 0x76769000 	C:\Windows\system32\USER32.dll
+0x76500000 - 0x7654e000 	C:\Windows\system32\GDI32.dll
+0x76690000 - 0x7669a000 	C:\Windows\system32\LPK.dll
+0x76ff0000 - 0x7708d000 	C:\Windows\system32\USP10.dll
+0x744d0000 - 0x7466e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2\COMCTL32.dll
+0x75850000 - 0x758a7000 	C:\Windows\system32\SHLWAPI.dll
+0x77090000 - 0x770af000 	C:\Windows\system32\IMM32.DLL
+0x76980000 - 0x76a4c000 	C:\Windows\system32\MSCTF.dll
+0x6c7c0000 - 0x6c83b000 	C:\Program Files\AVG\AVG2015\avghookx.dll
+0x55930000 - 0x559ef000 	C:\Program Files\Java\jre8\bin\msvcr100.dll
+0x552d0000 - 0x55666000 	C:\Program Files\Java\jre8\bin\client\jvm.dll
+0x733e0000 - 0x733e7000 	C:\Windows\system32\WSOCK32.dll
+0x75810000 - 0x75845000 	C:\Windows\system32\WS2_32.dll
+0x77e90000 - 0x77e96000 	C:\Windows\system32\NSI.dll
+0x73440000 - 0x73472000 	C:\Windows\system32\WINMM.dll
+0x75800000 - 0x75805000 	C:\Windows\system32\PSAPI.DLL
+0x736b0000 - 0x736bc000 	C:\Program Files\Java\jre8\bin\verify.dll
+0x73680000 - 0x736a1000 	C:\Program Files\Java\jre8\bin\java.dll
+0x73610000 - 0x73623000 	C:\Program Files\Java\jre8\bin\zip.dll
+0x74080000 - 0x7416b000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Xbootclasspath:D:\adt-bundle-windows-x86-20140702\sdk\platforms\android-20\android.jar 
+java_command: TranslateExample
+java_class_path (initial): D:\q=municate\New Folder\heyou\libs\httpcore-4.2.2.jar;D:\q=municate\New Folder\heyou\libs\imageloader-core-1.5.8.jar;D:\q=municate\New Folder\heyou\libs\httpmime-4.2.3.jar;D:\q=municate\New Folder\heyou\libs\android-support-v4.jar;D:\q=municate\New Folder\heyou\libs\gcm.jar;D:\adt-bundle-windows-x86-20140702\sdk\extras\google\google_play_services\libproject\google-play-services_lib\libs\google-play-services.jar;D:\q=municate\New Folder\heyou\libs\gson-2.2.2.jar;D:\q=municate\New Folder\heyou\libs\httpclient-4.2.3.jar;D:\q=municate\New Folder\heyou\libs\httpclient-cache-4.2.3.jar;D:\q=municate\New Folder\heyou\libs\universal-image-loader-1.8.4.jar;D:\q=municate\New Folder\heyou\libs\crittercism_v3_0_8_sdkonly.jar;D:\adt-bundle-windows-x86-20140702\sdk\extras\google\google_play_services\libproject\google-play-services_lib\bin\google-play-services_lib.jar;D:\q=municate\New Folder\heyou\bin\classes;D:\q=municate\New Folder\microsoft-translator-java-api-0.6.2-jar-with-dependencies.jar;C:\Program Files\Java\jre8\lib\ext\access-bridge.jar;C:\Program Files\Java\jre8\lib\ext\cldrdata.jar;C:\Program Files\Java\jre8\lib\ext\dnsns.jar;C:\Program Files\Java\jre8\lib\ext\jaccess.jar;C:\Program Files\Java\jre8\lib\ext\jfxrt.jar;C:\Program Files\Java\jre8\lib\ext\localedata.jar;C:\Program Files\Java\jre8\lib\ext\nashorn.jar;C:\Program Files\Java\jre8\lib\ext\sunec.jar;C:\Program Files\Java\jre8\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jre8\lib\ext\sunmscapi.jar;C:\Program Files\Java\jre8\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jre8\lib\ext\zipfs.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files/Java/jre8/bin/client;C:/Program Files/Java/jre8/bin;C:/Program Files/Java/jre8/lib/i386;C:\Program Files\Dell\DW WLAN Card;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;D:\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\Google\Cloud SDK\google-cloud-sdk\bin;D:\adt-bundle-windows-x86-20140702\eclipse;
+USERNAME=surbhi
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, clmul, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 3540056k(1288500k free), swap 7078356k(2797052k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.5-b02) for windows-x86 JRE (1.8.0_05-b13), built on Mar 18 2014 01:14:47 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Thu Feb 19 22:02:14 2015
+elapsed time: 0 seconds
+

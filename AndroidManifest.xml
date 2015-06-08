@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.heya"
+    android:versionCode="14"
+    android:versionName="1.31" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CLEAR_CACHE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <permission
+        android:name="com.example.heya.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.heya.permission.C2D_MESSAGE" />
+
+    <permission
+        android:name="com.example.heya.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.heya.permission.MAPS_RECEIVE" />
+    
+    
+    <!-- App receives GCM messages. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name="com.example.heya.SpikaApp"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="HEYOU"
+        android:largeHeap="true"
+        android:theme="@style/Theme.AppCompat" >
+        
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAEjfVThq8_-mHeitjZYanpI_XALIyRSAU" />
+        
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+        
+
+        <activity
+            android:name="com.example.heya.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+				<data android:scheme="spikademo" android:host="user"/>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+			</intent-filter>
+            <intent-filter>
+				<data android:scheme="spikademo" android:host="group"/>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT"/>
+				<category android:name="android.intent.category.BROWSABLE"/>
+			</intent-filter>
+        </activity>
+        
+        
+        <activity
+            android:name="com.example.heya.SignInActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop" >
+        </activity>
+         <activity
+            android:name="com.example.heya.DuplicateSplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop" >
+        </activity> <activity
+            android:name="com.example.heya.DuplicateRecentActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop" >
+        </activity> <activity
+            android:name="com.example.heya.DuplicateWallActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name="com.example.heya.WallActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:launchMode="singleTask" >
+        </activity>
+        
+        <activity
+            android:name="com.example.heya.extendables.SideBarActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.heya.extendables.HookUpActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.heya.extendables.HookUpFragmentActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.heya.PasscodeActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name="com.example.heya.UsersActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop" >
+        </activity>
+     
+        <activity android:name="org.opencv.samples.fd.FdActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="landscape"
+                  android:configChanges="keyboardHidden|orientation">
+        </activity>
+        
+         <activity android:name="org.opencv.samples.fd.MainActivity"
+                  android:label="@string/app_name"
+                  android:alwaysRetainTaskState="true"
+            
+            android:launchMode="singleTop"
+           >
+            <intent-filter>
+           <action android:name="com.example.heya.WallActivtiy" />
+           </intent-filter>
+            
+           
+             
+            </activity>
+         <activity
+            android:name="com.example.heya.FacebookActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity
+            android:name="com.example.heya.GroupsActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name="com.example.heya.PhotoActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity
+            android:name="com.example.heya.CreateGroupActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+             >
+        </activity>
+        <activity
+            android:name="com.example.heya.CameraCropActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.heya.MyProfileActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" >
+        </activity>
+         <activity
+            android:name="com.example.heya.NewActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" >
+        </activity>
+         
+        <activity
+            android:name="com.example.heya.UserProfileActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name="com.example.heya.GroupProfileActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name="com.example.heya.MembersActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop" >
+        </activity>
+              
+        
+      
+        <activity
+            android:name="com.example.heya.RecordingActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity
+            android:name="com.example.heya.MainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity
+            android:name="com.example.heya.VoiceActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity
+            android:name="com.example.heya.InformationActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity
+            android:name="com.example.heya.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity
+            android:name="com.example.heya.VideoActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" 
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+        <activity
+            android:name="com.example.heya.RecordingVideoActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
+        </activity>
+        <activity
+            android:name="com.example.heya.RecentActivityActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.heya.dialog.Tutorial"
+            android:screenOrientation="portrait"
+            android:theme="@style/TransparentDialogTheme" >
+        </activity>
+        <activity
+            android:name="com.example.heya.ServersListActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+
+        <service android:name="com.example.heya.GCMIntentService" />
+
+
+        <receiver
+            android:name="com.example.heya.GCMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.example.heya" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.example.heya.management.ConnectionChangeReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.ConnectivityManager.CONNECTIVITY_ACTION" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name="com.example.heya.management.LogoutReceiver">
+          <intent-filter>
+          <action android:name=".management.LogoutReceiver.LOGOUT">
+          </action>
+          </intent-filter>
+      </receiver>
+
+    </application>
+
+</manifest>
